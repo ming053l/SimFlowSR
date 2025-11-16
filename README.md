@@ -1,4 +1,4 @@
-<div align="center">
+<img width="810" height="471" alt="image" src="https://github.com/user-attachments/assets/45371cd7-74bd-4e94-b1eb-7de6b235c829" /><div align="center">
 
 # SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution
 
@@ -28,7 +28,7 @@ PhaSR addresses these challenges through **dual-level physically aligned prior i
 
 2. **GSRA (Geometric-Semantic Rectification Attention)** - Cross-modal differential attention (`A_rect = A_sem - λ·A_geo`) harmonizing DepthAnything-v2 geometry with DINO-v2 semantics.
 
-<img src="./static/images/PhaSR_main.png" width="600"/>
+<img src="./static/images/SimFlowSR_arch.png" width="600"/>
 
 **Benchmark results on shadow removal and ambient lighting normalization.**
 
