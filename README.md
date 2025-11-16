@@ -126,8 +126,8 @@ Download links and preprocessing scripts are provided in `datasets/README.md`.
 <p><i>SimFlowSR exhibits the most compressed activation dynamic range</i></p>
 </div>
 
-**SimFlowSR achieves the most stable feature propagation.** Conventional methods (SwinIR, HAT) show dramatic activation 
-fluctuations across depths, indicating unstable information flow. DRCT improves stability through dense connections, 
+**SimFlowSR achieves the most stable feature propagation.** Conventional methods (SwinIR-RSTB, HAT-RHAG) show dramatic activation 
+fluctuations across depths, indicating unstable information flow. DRCT (RDG) improves stability through dense connections, 
 but SimFlowSR further compresses the dynamic range with tighter activation clustering—validating that CEB + GAB maintains 
 stable representations while preserving fine details.
 
