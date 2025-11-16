@@ -16,6 +16,7 @@ National Yang Ming Chiao Tung University, National Cheng Kung University
   
 ## Overview
 
+  <img src="./static/teaser_image6.gif" width="600"/>
   <img src="./static/teaser_image7.gif" width="600"/>
   <img src="./static/teaser_image8.gif" width="600"/>
   
