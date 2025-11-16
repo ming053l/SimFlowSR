@@ -163,6 +163,31 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+    <!-- Motivation -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation</h2>
+        <div class="has-text-centered">
+          <img style="width: 100%; max-width: 800px;" src="static/images/SimFlow_SR_motivation.png" alt="SimFlowSR Motivation">
+        </div>
+        <div class="content has-text-justified" style="margin-top: 20px;">
+          <p>
+            <strong>Despite DRCT's competitive performance through consistent information flow, it still exhibits 
+            limited high-frequency information capture during deep feature extraction.</strong> As shown in the training 
+            dynamics on DF2K dataset, while DRCT achieves better stability in channel-wise entropy (right) compared to 
+            conventional methods (SwinIR, HAT), the high-to-low frequency information ratio (left) remains suboptimal. 
+            This reveals a critical gap: <em>consistent information flow addresses feature stability, but current 
+            architectures lack an effective mechanism to enhance high-frequency detail recovery within this stable flow.</em>
+          </p>
+          <p>
+            SimFlowSR achieves both the <strong>highest frequency information ratio</strong> and <strong>stable entropy</strong> 
+            throughout training, validating that combining consistent flow (CEB) with self-similarity aggregation (GAB) 
+            enables globally stable and detail-rich reconstruction under low complexity.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Motivation -->
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
