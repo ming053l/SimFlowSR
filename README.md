@@ -12,12 +12,17 @@ National Yang Ming Chiao Tung University, National Cheng Kung University
 
 </div>
 
-## Overview
 <div align="center">
+  
+## Overview
+
   <img src="./static/teaser_image7.gif" width="600"/>
   <img src="./static/teaser_image8.gif" width="600"/>
-</div>
+  
 **TL;DR:** SimFlowSR combines consistent information flow with parameter-free self-similarity aggregation for state-of-the-art super-resolution with highest efficiency.
+
+</div>
+
 
 - **Background and Motivation**
 
