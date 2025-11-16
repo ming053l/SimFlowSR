@@ -2,7 +2,7 @@
 
 <img src="./static/images/SimFlowSR_logo.png" width="600"/>
 
-# SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution
+# <img src="./static/images/SimFlowSR_icon.png" width="40" style="vertical-align: middle; margin-right: 10px;"> SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution
 
 [![Paper](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
 [![Project Page](https://img.shields.io/badge/Project-Page-green.svg)](https://ming053l.github.io/SimFlowSR/)
