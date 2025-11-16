@@ -1,6 +1,7 @@
+<div align="center">
+
 # SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution
 
-<div align="center">
 <img src="./static/images/SimFlowSR_logo.png" width="600"/>
 
 ## [[Paper Link]](https://arxiv.org/abs/XXXX.XXXXX) [[Project Page]](https://ming053l.github.io/PhaSR/) [[Model zoo]](https://drive.google.com/drive/folders/XXXXX) [[Visual Results]](https://drive.google.com/drive/folders/XXXXX)
@@ -8,6 +9,7 @@
 [Chia-Ming Lee](https://ming053l.github.io/), [Chih-Chung Hsu](https://cchsu.info/)
 
 National Yang Ming Chiao Tung University, National Cheng Kung University
+
 </div>
 
 ## Overview
