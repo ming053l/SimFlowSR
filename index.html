@@ -151,7 +151,7 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/teaser_image7.gif" alt="SimFlowSR Motivation" style="width: 100%;">
+      <img src="./static/teaser_image7.gif" alt="SimFlowSR Teaser" style="width: 100%;">
         <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
           <strong>TL;DR:</strong> 
           <span class="dnerf">SimFlowSR</span> integrates <strong>CEB</strong> (consistent flow) with 
@@ -163,60 +163,88 @@
 
 <section class="section">
   <div class="container is-max-desktop">
-    <!-- Motivation -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Motivation</h2>
-        <div class="has-text-centered">
-          <img style="width: 100%; max-width: 800px;" src="static/images/SimFlowSR_motivation.png" alt="SimFlowSR Motivation">
-        </div>
-        <div class="content has-text-justified" style="margin-top: 20px;">
-          <p>
-            <strong>Despite DRCT's competitive performance through consistent information flow, it still exhibits 
-            limited high-frequency information capture during deep feature extraction.</strong> As shown in the training 
-            dynamics on DF2K dataset, while DRCT achieves better stability in channel-wise entropy (right) compared to 
-            conventional methods (SwinIR, HAT), the high-to-low frequency information ratio (left) remains suboptimal. 
-            This reveals a critical gap: <em>consistent information flow addresses feature stability, but current 
-            architectures lack an effective mechanism to enhance high-frequency detail recovery within this stable flow.</em>
-          </p>
-          <p>
-            SimFlowSR achieves both the <strong>highest frequency information ratio</strong> and <strong>stable entropy</strong> 
-            throughout training, validating that combining consistent flow (CEB) with self-similarity aggregation (GAB) 
-            enables globally stable and detail-rich reconstruction under low complexity.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Motivation -->
     <!-- Abstract. -->
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recent single image super-resolution (SISR) methods suffer from unstable feature propagation and large model sizes. 
-            While consistent information flow stabilizes activation dynamics, current approaches still struggle to recover 
-            high-frequency details crucial for perceptual quality.
+            Recent SISR methods suffer from unstable feature propagation and large model sizes. 
+            While consistent information flow stabilizes activation dynamics, current approaches 
+            struggle to recover high-frequency details crucial for perceptual quality.
           </p>
           <p>
-            We propose <strong>SimFlowSR</strong>, a lightweight framework comprising two complementary branches: 
-            <strong>(1) CEB (Contextual Encoding Branch)</strong> stabilizes activation dynamics through dense-residual connections, 
-            while <strong>(2) GAB (Geometric Aggregation Branch)</strong> recovers fine structures via parameter-free geometric 
-            transformations using the dihedral group D₄. This cooperative design achieves globally consistent yet detail-rich 
+            We propose <strong>SimFlowSR</strong>, comprising two complementary branches: 
+            <strong>CEB</strong> stabilizes dynamics through dense-residual connections, 
+            while <strong>GAB</strong> recovers fine structures via parameter-free geometric 
+            transformations (dihedral group D₄). This achieves globally consistent yet detail-rich 
             reconstruction with minimal overhead.
           </p>
           <p>
-            When integrated into SwinIR and MambaIR, SimFlowSR improves reconstruction quality with up to 37% fewer parameters, 
-            demonstrating superior performance across standard benchmarks. Our principled integration of consistent information 
-            flow with self-similarity aggregation provides a new pathway toward high-fidelity super-resolution.
+            When integrated into SwinIR and MambaIR, SimFlowSR improves quality with up to 37% fewer parameters, 
+            demonstrating superior performance across standard benchmarks.
           </p>
         </div>
       </div>
     </div>
     <!--/ Abstract. -->
 
-
+    <!-- Motivation -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Motivation</h2>
+        <div class="has-text-centered">
+          <img style="width: 100%; max-width: 800px;" src="static/images/SimFlowSR_motivation.png" alt="Motivation">
+        </div>
+        <div class="content has-text-justified" style="margin-top: 20px;">
+          <p>
+            <strong>Despite DRCT's competitive performance through consistent information flow, 
+            it exhibits limited high-frequency capture.</strong> Training dynamics on DF2K show 
+            DRCT achieves stable entropy but suboptimal frequency ratio—revealing the gap: 
+            <em>consistent flow ensures stability, but lacks mechanisms for high-frequency recovery.</em>
+          </p>
+          <p>
+            SimFlowSR achieves both <strong>highest frequency ratio</strong> and <strong>stable entropy</strong>, 
+            validating that CEB + GAB enables stable yet detail-rich reconstruction under low complexity.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Motivation -->
     
+    <!-- Geometric Self-Similarity -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Geometric Self-Similarity</h2>
+        <div class="has-text-centered">
+          <img style="width: 100%; max-width: 900px;" src="static/images/SimFlowSR_Sim.png" alt="Self-similarity">
+        </div>
+        <div class="content has-text-justified" style="margin-top: 20px;">
+          <p>
+            <strong>Natural images exhibit geometric self-similarity</strong>—structural patterns 
+            recur under rotation, flipping, scaling. This fractal property manifests across diverse 
+            scenes (brick walls, leaves, snowflakes), enabling high-frequency recovery without heavy computation.
+          </p>
+        </div>
+        
+        <div class="has-text-centered" style="margin-top: 30px;">
+          <img style="width: 100%; max-width: 700px;" src="static/images/SimFlowSR_GAB.png" alt="GAB">
+        </div>
+        <div class="content has-text-justified" style="margin-top: 20px;">
+          <p>
+            <strong>GAB explicitly models self-similarity via parameter-free transformations.</strong> 
+            Unlike methods searching patches without geometric modeling (a), GAB applies dihedral group D₄ 
+            transformations (identity, 90°/180°/270° rotations, flips) to construct candidates (b). 
+            Initially dissimilar patches align after transformation, revealing latent patterns. 
+            Top candidates are selected (cosine similarity), inverse-aligned (T⁻¹), and aggregated 
+            (adaptive attention)—no learnable parameters required.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Geometric Self-Similarity -->
+
+    <!-- Architecture -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-4">Network Architecture</h2>
@@ -226,13 +254,10 @@
         <div class="column content">
           <div class="content has-text-justified">
             <p>
-              SimFlowSR employs a modular dual-branch architecture that can be seamlessly integrated into various 
-              backbone networks (e.g., SwinIR, MambaIR, RWKVIR). The <strong>Contextual Encoding Branch (CEB)</strong> 
-              maintains consistent information flow through dense-residual connections, while the <strong>Geometric 
-              Aggregation Branch (GAB)</strong> aggregates self-similar features via parameter-free geometric 
-              transformations from the dihedral group D₄ (rotation, flipping). This plug-and-play design enables 
-              SimFlowSR to enhance reconstruction quality across diverse architectures while reducing model complexity 
-              by up to 37%.
+              SimFlowSR employs a modular dual-branch architecture seamlessly integrated into backbones 
+              (SwinIR, MambaIR, RWKVIR). <strong>CEB</strong> maintains consistent flow via dense-residual connections; 
+              <strong>GAB</strong> aggregates self-similar features via D₄ transformations. This plug-and-play design 
+              enhances quality across architectures while reducing complexity by up to 37%.
             </p>
           </div>
         </div>
@@ -241,63 +266,49 @@
   </div>
 </section>
 
-  <section class="section">
+<section class="section">
   <div class="container is-max-desktop">
     <div class="columns is-centered">
-      <!-- Comparison -->
       <div class="column">
-        <br/>
-        
         <h2 class="title is-4">Analysis and Visualization</h2>
         
-        <!-- LAM Visualization -->
-        <h3 class="title is-5">Local Attribution Maps (LAM) and Diffusion Index</h3>
+        <!-- LAM -->
+        <h3 class="title is-5">Local Attribution Maps (LAM)</h3>
         <div class="content has-text-justified">
           <img style="width: 100%;" src="static/images/SimFlowSR_LAM.png">
           <p style="margin-top: 15px;">
-            <strong>Local Attribution Maps visualization demonstrates SimFlowSR's superior spatial aggregation capability.</strong>
-            Our method exhibits significantly higher Diffusion Index (DI) values compared to baseline methods (SwinIR, HAT, MambaIR, MambaIRv2), 
-            indicating that GAB's parameter-free geometric transformations successfully expand the effective receptive field. 
-            The distributed attention patterns confirm that SimFlowSR captures long-range self-similar correspondences across spatially 
-            distant regions, while competing methods remain constrained to local neighborhoods.
+            <strong>LAM demonstrates superior spatial aggregation.</strong> SimFlowSR exhibits significantly 
+            higher Diffusion Index than baselines, confirming GAB expands effective receptive field and captures 
+            long-range self-similar correspondences.
           </p>
         </div>
         <br />
 
-        <!-- Feature Map Visualization -->
-        <h3 class="title is-5">Feature-level Sparsity Analysis</h3>
+        <!-- Feature Map -->
+        <h3 class="title is-5">Feature-level Sparsity</h3>
         <div class="content has-text-justified">
           <img style="width: 100%;" src="static/images/SimFlowSR_featuremap.png">
           <p style="margin-top: 15px;">
-            <strong>Individual feature map visualization reveals the learned representations at channel granularity.</strong>
-            Each feature map shows sparse activation patterns concentrated on specific structural elements (top: diagonal patterns; bottom: building facades), 
-            indicating that different channels specialize in distinct geometric primitives rather than learning redundant representations. 
-            Within each feature map, activated regions demonstrate high geometric self-similarity—repetitive patterns trigger consistent responses 
-            across spatially separated instances. This validates that GAB learns to aggregate self-similar structures while maintaining 
-            channel-wise specialization, achieving superior parameter efficiency through reduced feature redundancy.
+            <strong>Sparse activation patterns reveal channel specialization.</strong> Each channel targets 
+            distinct geometric primitives (diagonals, facades), demonstrating GAB aggregates self-similar 
+            structures while maintaining efficiency through reduced redundancy.
           </p>
         </div>
         <br />
 
-        <!-- ERF Visualization -->
-        <h3 class="title is-5">Effective Receptive Field (ERF) Analysis</h3>
+        <!-- ERF -->
+        <h3 class="title is-5">Effective Receptive Field (ERF)</h3>
         <div class="content has-text-justified">
           <img style="width: 100%;" src="static/images/SimFlowSR_ERF.png">
           <p style="margin-top: 15px;">
-            <strong>Effective Receptive Field distributions demonstrate SimFlowSR's substantially broader spatial coverage.</strong>
-            When integrated with our framework, all baseline models (SwinIR, HAT, DRCT, MambaIR, MambaIRv2, RWKVIR) 
-            exhibit significantly expanded ERF distributions compared to their original implementations. The visualization 
-            uses histogram equalization for better clarity, showing that GAB's multi-scale geometric transformations via 
-            dihedral group D₄ successfully aggregate distant similar regions while CEB maintains coherent propagation. 
-            This demonstrates that our dual-branch design consistently enhances spatial modeling capability across diverse 
-            backbone architectures, validating the effectiveness of integrating self-similarity aggregation into consistent 
-            information flow.
+            <strong>ERF shows substantially broader spatial coverage.</strong> All baselines exhibit significantly 
+            expanded ERF when integrated with SimFlowSR, demonstrating GAB's multi-scale D₄ transformations 
+            consistently enhance spatial modeling across diverse architectures.
           </p>
         </div>
         <br />
 
       </div>
-      <!--/ Comparison -->
     </div>
   </div>
 </section>
@@ -334,12 +345,10 @@
   </div>
 </footer>
 
-<!-- Initialize comparison sliders after DOM is loaded -->
 <script>
   document.addEventListener('DOMContentLoaded', function() {
     console.log('DOM loaded, initializing sliders...');
     
-    // Initialize all comparison sliders
     for (let i = 1; i <= 16; i++) {
       new BeforeAfter({ id: '#compare' + i });
     }
