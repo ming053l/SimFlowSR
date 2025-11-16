@@ -219,334 +219,50 @@
       <div class="column">
         <br/>
         <h2 class="title is-4">Comparison Results on Urban100 (×4 Super-Resolution)</h2>
-
-        <!-- Sample 1 -->
-        <h3 class="title is-5">Sample 1 - img_012</h3>
         
-        <div class="image-columns">
-          <div class="image-column">
-            <div id="compare1" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample1/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample1/SimFlowSR.png">
-                  <div class="bal-beforePosition beforeLabel">SimFlowSR (Ours)</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare2" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample1/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample1/SwinIR.png">
-                  <div class="bal-beforePosition beforeLabel">SwinIR</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare3" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample1/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample1/HAT.png">
-                  <div class="bal-beforePosition beforeLabel">HAT</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare4" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample1/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample1/DRCT.png">
-                  <div class="bal-beforePosition beforeLabel">DRCT</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
+        <h2 class="title is-4">Analysis and Visualization</h2>
+        
+        <!-- LAM Visualization -->
+        <h3 class="title is-5">Local Attribution Maps (LAM) and Diffusion Index</h3>
+        <div class="content has-text-justified">
+          <img style="width: 100%;" src="static/images/SR_LAM.pdf">
+          <p style="margin-top: 15px;">
+            <strong>Local Attribution Maps visualization demonstrates SimFlowSR's superior spatial aggregation capability.</strong>
+            Our method exhibits significantly higher Diffusion Index (DI) values compared to baseline methods (SwinIR, HAT, MambaIR, MambaIRv2), 
+            indicating that GAB's parameter-free geometric transformations successfully expand the effective receptive field. 
+            The distributed attention patterns confirm that SimFlowSR captures long-range self-similar correspondences across spatially 
+            distant regions, while competing methods remain constrained to local neighborhoods.
+          </p>
         </div>
-        <br /><br />
+        <br />
 
-        <!-- Sample 2 -->
-        <h3 class="title is-5">Sample 2 - img_061</h3>
-        
-        <div class="image-columns">
-          <div class="image-column">
-            <div id="compare5" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample2/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample2/SimFlowSR.png">
-                  <div class="bal-beforePosition beforeLabel">SimFlowSR (Ours)</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare6" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample2/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample2/SwinIR.png">
-                  <div class="bal-beforePosition beforeLabel">SwinIR</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare7" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample2/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample2/HAT.png">
-                  <div class="bal-beforePosition beforeLabel">HAT</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="image-column">
-            <div id="compare8" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample2/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample2/DRCT.png">
-                  <div class="bal-beforePosition beforeLabel">DRCT</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
+        <!-- Feature Map Visualization -->
+        <h3 class="title is-5">Feature-level Sparsity Analysis</h3>
+        <div class="content has-text-justified">
+          <img style="width: 100%;" src="static/images/SR_featuremap_imagewise.pdf">
+          <p style="margin-top: 15px;">
+            <strong>Individual feature map visualization reveals the learned representations at channel granularity.</strong>
+            Each feature map shows sparse activation patterns concentrated on specific structural elements (top: diagonal patterns; bottom: building facades), 
+            indicating that different channels specialize in distinct geometric primitives rather than learning redundant representations. 
+            Within each feature map, activated regions demonstrate high geometric self-similarity—repetitive patterns trigger consistent responses 
+            across spatially separated instances. This validates that GAB learns to aggregate self-similar structures while maintaining 
+            channel-wise specialization, achieving superior parameter efficiency through reduced feature redundancy.
+          </p>
         </div>
-        <br /><br />
+        <br />
 
-        
-        <h2 class="title is-4">Comparison Results on Set14 (×4 Super-Resolution)</h2>
-        <!-- Sample 3 Full -->
-        <h3 class="title is-5">Sample 3 - baboon</h3>
-        
-        <div class="image-columns">
-          <div class="image-column">
-            <div id="compare9" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample3/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample3/SimFlowSR.png">
-                  <div class="bal-beforePosition beforeLabel">SimFlowSR (Ours)</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare10" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample3/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample3/SwinIR.png">
-                  <div class="bal-beforePosition beforeLabel">SwinIR</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare11" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample3/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample3/MambaIR.png">
-                  <div class="bal-beforePosition beforeLabel">MambaIR</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare12" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample3/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample3/DRCT.png">
-                  <div class="bal-beforePosition beforeLabel">DRCT</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br /><br />
-
-        <!-- Sample 4 -->
-        <h3 class="title is-5">Sample 4 - comic</h3>
-        
-        <div class="image-columns">
-          <div class="image-column">
-            <div id="compare13" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4/SimFlowSR.png">
-                  <div class="bal-beforePosition beforeLabel">SimFlowSR (Ours)</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare14" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4/SwinIR.png">
-                  <div class="bal-beforePosition beforeLabel">SwinIR</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare15" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4/MambaIR.png">
-                  <div class="bal-beforePosition beforeLabel">MambaIR</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare16" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4/bicubic.png">
-                <div class="bal-afterPosition afterLabel">Bicubic</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4/DRCT.png">
-                  <div class="bal-beforePosition beforeLabel">DRCT</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
+        <!-- ERF Visualization -->
+        <h3 class="title is-5">Effective Receptive Field (ERF) Analysis</h3>
+        <div class="content has-text-justified">
+          <img style="width: 100%;" src="static/images/SR_ERF.pdf">
+          <p style="margin-top: 15px;">
+            <strong>Effective Receptive Field distributions demonstrate SimFlowSR's substantially broader spatial coverage.</strong>
+            Compared to baseline models (SwinIR, HAT, DRCT, MambaIR, MambaIRv2, RWKVIR), SimFlowSR exhibits significantly expanded 
+            ERF distributions across all backbone architectures when integrated with our framework. The visualization uses histogram 
+            equalization for better clarity, showing that GAB's multi-scale geometric transformations via dihedral group D₄ successfully 
+            aggregate distant similar regions while CEB maintains coherent propagation. This validates our integration of self-similarity 
+            aggregation into consistent information flow for enhanced spatial modeling capability.
+          </p>
         </div>
         <br />
 
@@ -555,7 +271,6 @@
     </div>
   </div>
 </section>
-
   
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
