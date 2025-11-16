@@ -122,6 +122,7 @@ Download links and preprocessing scripts are provided in `datasets/README.md`.
 
 <div align="center">
 <img src="./static/images/SimFlowSR_dynamic1.png" width="900"/>
+<img src="./static/images/SimFlowSR_dynamic2.png" width="900"/>
 <p><i>SimFlowSR exhibits the most compressed activation dynamic range</i></p>
 </div>
 
