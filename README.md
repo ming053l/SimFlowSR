@@ -1,5 +1,3 @@
-<img width="810" height="471" alt="image" src="https://github.com/user-attachments/assets/45371cd7-74bd-4e94-b1eb-7de6b235c829" /><div align="center">
-
 # SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution
 
 <img src="./static/images/SimFlowSR_logo.png" width="600"/>
