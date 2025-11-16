@@ -152,11 +152,11 @@
   <div class="container is-max-desktop">
     <div class="hero-body">
       <img src="./static/teaser_image7.gif" alt="SimFlowSR Motivation" style="width: 100%;">
-      <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
-        <strong>TL;DL:</strong> Existing methods suffer from unstable activation dynamics and limited high-frequency detail recovery. 
-        <span class="dnerf">SimFlowSR</span> combines <strong> consistent information flow (CEB)</strong> with 
-        <strong>parameter-free self-similarity aggregation (GAB)</strong> for globally stable yet detail-rich reconstruction.
-      </h2>
+        <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
+          <strong>TL;DR:</strong> 
+          <span class="dnerf">SimFlowSR</span> integrates <strong>CEB</strong> (consistent flow) with 
+          <strong>GAB</strong> (self-similarity aggregation) for efficient high-fidelity super-resolution.
+        </h2>
     </div>
   </div>
 </section>
@@ -190,16 +190,24 @@
     </div>
     <!--/ Abstract. -->
 
+
+    
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-4">Network Architecture</h2>
-          <img style="width: 760px; height: 550px;" src="static/images/SimFlowSR_arch.png">
+          <div class="has-text-centered">
+            <img style="width: 760px; height: 550px;" src="static/images/SimFlowSR_arch.png">
+          </div>
         <div class="column content">
           <div class="content has-text-justified">
             <p>
-              SimFlowSR employs a dual-branch architecture where CEB maintains consistent information flow through 
-              dense-residual connections, while GAB aggregates self-similar features via parameter-free geometric 
-              transformations (rotation, flipping) from the dihedral group D₄.
+              SimFlowSR employs a modular dual-branch architecture that can be seamlessly integrated into various 
+              backbone networks (e.g., SwinIR, MambaIR, RWKVIR). The <strong>Contextual Encoding Branch (CEB)</strong> 
+              maintains consistent information flow through dense-residual connections, while the <strong>Geometric 
+              Aggregation Branch (GAB)</strong> aggregates self-similar features via parameter-free geometric 
+              transformations from the dihedral group D₄ (rotation, flipping). This plug-and-play design enables 
+              SimFlowSR to enhance reconstruction quality across diverse architectures while reducing model complexity 
+              by up to 37%.
             </p>
           </div>
         </div>
@@ -252,11 +260,13 @@
           <img style="width: 100%;" src="static/images/SimFlowSR_ERF.png">
           <p style="margin-top: 15px;">
             <strong>Effective Receptive Field distributions demonstrate SimFlowSR's substantially broader spatial coverage.</strong>
-            Compared to baseline models (SwinIR, HAT, DRCT, MambaIR, MambaIRv2, RWKVIR), SimFlowSR exhibits significantly expanded 
-            ERF distributions across all backbone architectures when integrated with our framework. The visualization uses histogram 
-            equalization for better clarity, showing that GAB's multi-scale geometric transformations via dihedral group D₄ successfully 
-            aggregate distant similar regions while CEB maintains coherent propagation. This validates our integration of self-similarity 
-            aggregation into consistent information flow for enhanced spatial modeling capability.
+            When integrated with our framework, all baseline models (SwinIR, HAT, DRCT, MambaIR, MambaIRv2, RWKVIR) 
+            exhibit significantly expanded ERF distributions compared to their original implementations. The visualization 
+            uses histogram equalization for better clarity, showing that GAB's multi-scale geometric transformations via 
+            dihedral group D₄ successfully aggregate distant similar regions while CEB maintains coherent propagation. 
+            This demonstrates that our dual-branch design consistently enhances spatial modeling capability across diverse 
+            backbone architectures, validating the effectiveness of integrating self-similarity aggregation into consistent 
+            information flow.
           </p>
         </div>
         <br />
