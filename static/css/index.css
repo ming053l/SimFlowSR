@@ -29,7 +29,7 @@ body {
   height: 1em;  /* 改小一點 */
   width: auto;
   vertical-align: middle;
-  margin-right: 0.1rem;
+  margin-right: 0.3rem;
   margin-bottom: 0.1em;  /* 微調垂直位置 */
 }
 .publication-title {
