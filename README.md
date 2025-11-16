@@ -118,15 +118,33 @@ Download links and preprocessing scripts are provided in `datasets/README.md`.
 
 ## 🎨 Visualization
 
+### Activation Dynamics
+
+<div align="center">
+<img src="./static/images/SimFlowSR_dynamic1.png" width="900"/>
+<p><i>SimFlowSR exhibits the most compressed activation dynamic range</i></p>
+</div>
+
+**SimFlowSR achieves the most stable feature propagation.** Conventional methods (SwinIR, HAT) show dramatic activation 
+fluctuations across depths, indicating unstable information flow. DRCT improves stability through dense connections, 
+but SimFlowSR further compresses the dynamic range with tighter activation clustering—validating that CEB + GAB maintains 
+stable representations while preserving fine details.
+
+### Spatial Aggregation
+
 <div align="center">
 <img src="./static/images/SimFlowSR_LAM.png" width="800"/>
-<p><i>Local Attribution Maps showing superior spatial aggregation capability</i></p>
+<p><i>LAM showing superior spatial aggregation with higher Diffusion Index</i></p>
 </div>
 
 <div align="center">
 <img src="./static/images/SimFlowSR_ERF.png" width="800"/>
-<p><i>Effective Receptive Field demonstrating broader spatial coverage</i></p>
+<p><i>ERF demonstrating substantially broader spatial coverage</i></p>
 </div>
+
+**SimFlowSR captures long-range correspondences effectively.** LAM visualization shows significantly higher Diffusion 
+Index, while ERF demonstrates broader spatial coverage across all backbones—confirming GAB's multi-scale D₄ transformations 
+consistently enhance spatial modeling capability.
 
 ---
 
