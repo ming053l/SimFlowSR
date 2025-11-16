@@ -270,40 +270,40 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column">
-        <h2 class="title is-4">Analysis and Visualization</h2>
+        <h2 class="title is-4">Visualization</h2>
         
-        <!-- LAM -->
-        <h3 class="title is-5">Local Attribution Maps (LAM)</h3>
+        <!-- Activation Dynamics -->
+        <h3 class="title is-5">Activation Dynamics</h3>
+        <div class="content has-text-justified">
+          <img style="width: 100%;" src="static/images/SimFlowSR_dynamic1.png">
+          <img style="width: 100%;" src="static/images/SimFlowSR_dynamic2.png">
+          <p style="margin-top: 15px;">
+            <strong>SimFlowSR achieves the most stable feature propagation.</strong> Conventional methods (SwinIR, HAT) 
+            show dramatic activation fluctuations across depths, indicating unstable information flow. DRCT improves 
+            stability through dense connections, but SimFlowSR further compresses the dynamic range with tighter 
+            activation clustering—validating that CEB + GAB maintains stable representations while preserving fine details.
+          </p>
+        </div>
+        <br />
+
+        <!-- Spatial Aggregation -->
+        <h3 class="title is-5">Spatial Aggregation</h3>
         <div class="content has-text-justified">
           <img style="width: 100%;" src="static/images/SimFlowSR_LAM.png">
           <p style="margin-top: 15px;">
-            <strong>LAM demonstrates superior spatial aggregation.</strong> SimFlowSR exhibits significantly 
-            higher Diffusion Index than baselines, confirming GAB expands effective receptive field and captures 
-            long-range self-similar correspondences.
+            <strong>LAM showing superior spatial aggregation with higher Diffusion Index.</strong>
           </p>
         </div>
-        <br />
-
-        <!-- Feature Map -->
-        <h3 class="title is-5">Feature-level Sparsity</h3>
-        <div class="content has-text-justified">
-          <img style="width: 100%;" src="static/images/SimFlowSR_featuremap.png">
-          <p style="margin-top: 15px;">
-            <strong>Sparse activation patterns reveal channel specialization.</strong> Each channel targets 
-            distinct geometric primitives (diagonals, facades), demonstrating GAB aggregates self-similar 
-            structures while maintaining efficiency through reduced redundancy.
-          </p>
-        </div>
-        <br />
-
-        <!-- ERF -->
-        <h3 class="title is-5">Effective Receptive Field (ERF)</h3>
+        
         <div class="content has-text-justified">
           <img style="width: 100%;" src="static/images/SimFlowSR_ERF.png">
           <p style="margin-top: 15px;">
-            <strong>ERF shows substantially broader spatial coverage.</strong> All baselines exhibit significantly 
-            expanded ERF when integrated with SimFlowSR, demonstrating GAB's multi-scale D₄ transformations 
-            consistently enhance spatial modeling across diverse architectures.
+            <strong>ERF demonstrating substantially broader spatial coverage.</strong>
+          </p>
+          <p>
+            SimFlowSR captures long-range correspondences effectively. LAM visualization shows significantly higher 
+            Diffusion Index, while ERF demonstrates broader spatial coverage across all backbones—confirming GAB's 
+            multi-scale D₄ transformations consistently enhance spatial modeling capability.
           </p>
         </div>
         <br />
@@ -316,11 +316,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{lee2024simflowsr,
+    <pre><code>@article{lee2025simflowsr,
   title={SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution},
   author={Lee, Chia-Ming and Hsu, Chih-Chung},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2024}
+  year={2025}
 }</code></pre>
   </div>
 </section>
