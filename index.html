@@ -1,359 +1,171 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <meta name="description"
-        content="SimFlowSR combines consistent information flow with parameter-free self-similarity aggregation for state-of-the-art super-resolution with highest efficiency.">
-  <meta name="keywords" content="SimFlowSR, Super-Resolution, Image Restoration">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution</title>
+<div align="center">
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
+<img src="./static/images/SimFlowSR_logo.png" width="600"/>
 
-    function gtag() {
-      dataLayer.push(arguments);
-    }
+# SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution
 
-    gtag('js', new Date());
+[![Paper](https://img.shields.io/badge/arXiv-XXXX.XXXXX-b31b1b.svg)](https://arxiv.org/abs/XXXX.XXXXX)
+[![Project Page](https://img.shields.io/badge/Project-Page-green.svg)](https://ming053l.github.io/SimFlowSR/)
+[![Code](https://img.shields.io/badge/Code-GitHub-black.svg)](https://github.com/ming053l/SimFlowSR)
 
-    gtag('config', 'G-PYVRSFMDRL');
-  </script>
+[Chia-Ming Lee](https://ming053l.github.io/)<sup>1,2</sup>, [Chih-Chung Hsu](https://cchsu.info/)<sup>1,2</sup>
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
-        rel="stylesheet">
+<sup>1</sup>National Yang Ming Chiao Tung University, <sup>2</sup>National Cheng Kung University
 
-  <link rel="stylesheet" href="./static/css/bulma.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
-  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/SimFlowSR_icon.png">
+</div>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script defer src="./static/js/fontawesome.all.min.js"></script>
-  <script src="./static/js/bulma-carousel.min.js"></script>
-  <script src="./static/js/bulma-slider.min.js"></script>
-  <script src="./static/js/index.js"></script>
-</head>
-  
-<body>
+---
 
-<nav class="navbar" role="navigation" aria-label="main navigation">
-  <div class="navbar-brand">
-    <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div class="navbar-menu">
-    <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://ming053l.github.io/">
-      <span class="icon">
-          <i class="fas fa-home"></i>
-      </span>
-      </a>
+## 📋 Overview
 
-      <div class="navbar-item has-dropdown is-hoverable">
-        <a class="navbar-link">
-          More Research
-        </a>
-        <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://ming053l.github.io/PhaSR/">
-            PhaSR
-          </a>
-          <a class="navbar-item" href="https://ming053l.github.io/DRCT/">
-            DRCT
-          </a>
-        </div>
-      </div>
-    </div>
+**TL;DR:** SimFlowSR integrates **CEB** (Contextual Encoding Branch) for consistent information flow with **GAB** (Geometric Aggregation Branch) for parameter-free self-similarity aggregation, achieving efficient high-fidelity super-resolution.
 
-  </div>
-</nav>
+### Key Features
 
+- 🎯 **Dual-Branch Design**: CEB stabilizes activation dynamics; GAB enhances high-frequency details
+- ⚡ **High Efficiency**: Up to 37% fewer parameters with superior performance
+- 🔧 **Plug-and-Play**: Seamlessly integrates into various backbones (SwinIR, MambaIR, RWKVIR)
+- 🎨 **Parameter-Free**: GAB uses geometric transformations (dihedral group D₄) without learnable parameters
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">
-            <img src="./static/images/SimFlowSR_icon.png" alt="SimFlowSR Icon" class="title-icon">SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution
-          </h1>
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://ming053l.github.io/">Chia-Ming Lee</a><sup>1,2</sup>,</span>
-            <span class="author-block">
-              <a href="https://cchsu.info/">Chih-Chung Hsu</a><sup>1,2</sup>
-            </span>
-          </div>
+---
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>National Yang Ming Chiao Tung University,</span>
-            <span class="author-block"><sup>2</sup>National Cheng Kung University</span>
-          </div>
+## 🚀 Performance
 
-          <div class="column has-text-centered">
-            <div class="publication-links">
-              <!-- PDF Link. -->
-              <span class="link-block">
-                <a href="https://arxiv.org/pdf/XXXX.XXXXX"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fas fa-file-pdf"></i>
-                  </span>
-                  <span>Paper</span>
-                </a>
-              </span>
-              <span class="link-block">
-                <a href="https://arxiv.org/abs/XXXX.XXXXX"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="ai ai-arxiv"></i>
-                  </span>
-                  <span>arXiv</span>
-                </a>
-              </span>
-              <!-- Code Link. -->
-              <span class="link-block">
-                <a href="https://github.com/ming053l/SimFlowSR"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="fab fa-github"></i>
-                  </span>
-                  <span>Code</span>
-                  </a>
-              </span>
-              <!-- Dataset Link. -->
-              <span class="link-block">
-                <a href="https://drive.google.com/drive/folders/XXXXX"
-                   class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon">
-                      <i class="far fa-images"></i>
-                  </span>
-                  <span>Results</span>
-                  </a>
-            </div>
+**Benchmark results on standard datasets (×4 super-resolution):**
 
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+| Model | Params | FLOPs | Set5 | Set14 | BSD100 | Urban100 | Manga109 |
+|:-----:|:------:|:-----:|:----:|:-----:|:------:|:--------:|:--------:|
+| SwinIR | 11.90M | 45.65G | 32.92 | 29.09 | 27.92 | 27.45 | 32.03 |
+| HAT | 20.77M | 104.22G | 33.04 | 29.23 | 28.00 | 27.97 | 32.48 |
+| DRCT | 14.14M | 74.64G | 33.11 | 29.27 | 28.02 | 27.98 | 32.51 |
+| MambaIR | 20.42M | 72.56G | 33.03 | 29.20 | 27.98 | 27.68 | 32.32 |
+| **SimFlowSR-SwinIR** | **13.22M** | **58.76G** | **33.16** | **29.33** | **28.15** | **28.06** | **32.52** |
+| **SimFlowSR-MambaIR** | **12.71M** | **59.30G** | **33.07** | **29.14** | **27.95** | **27.72** | **32.50** |
 
-<section class="hero teaser">
-  <div class="container is-max-desktop">
-    <div class="hero-body">
-      <img src="./static/teaser_image7.gif" alt="SimFlowSR Teaser" style="width: 100%;">
-        <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
-          <strong>TL;DR:</strong> 
-          <span class="dnerf">SimFlowSR</span> integrates <strong>CEB</strong> (consistent flow) with 
-          <strong>GAB</strong> (self-similarity aggregation) for efficient high-fidelity super-resolution.
-        </h2>
-    </div>
-  </div>
-</section>
+---
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <!-- Abstract. -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Abstract</h2>
-        <div class="content has-text-justified">
-          <p>
-            Recent SISR methods suffer from unstable feature propagation and large model sizes. 
-            While consistent information flow stabilizes activation dynamics, current approaches 
-            struggle to recover high-frequency details crucial for perceptual quality.
-          </p>
-          <p>
-            We propose <strong>SimFlowSR</strong>, comprising two complementary branches: 
-            <strong>CEB</strong> stabilizes dynamics through dense-residual connections, 
-            while <strong>GAB</strong> recovers fine structures via parameter-free geometric 
-            transformations (dihedral group D₄). This achieves globally consistent yet detail-rich 
-            reconstruction with minimal overhead.
-          </p>
-          <p>
-            When integrated into SwinIR and MambaIR, SimFlowSR improves quality with up to 37% fewer parameters, 
-            demonstrating superior performance across standard benchmarks.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Abstract. -->
+## 🏗️ Architecture
 
-    <!-- Motivation -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Motivation</h2>
-        <div class="has-text-centered">
-          <img style="width: 100%; max-width: 800px;" src="static/images/SimFlowSR_motivation.png" alt="Motivation">
-        </div>
-        <div class="content has-text-justified" style="margin-top: 20px;">
-          <p>
-            <strong>Despite DRCT's competitive performance through consistent information flow, 
-            it exhibits limited high-frequency capture.</strong> Training dynamics on DF2K show 
-            DRCT achieves stable entropy but suboptimal frequency ratio—revealing the gap: 
-            <em>consistent flow ensures stability, but lacks mechanisms for high-frequency recovery.</em>
-          </p>
-          <p>
-            SimFlowSR achieves both <strong>highest frequency ratio</strong> and <strong>stable entropy</strong>, 
-            validating that CEB + GAB enables stable yet detail-rich reconstruction under low complexity.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Motivation -->
-    
-    <!-- Geometric Self-Similarity -->
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Geometric Self-Similarity</h2>
-        <div class="has-text-centered">
-          <img style="width: 100%; max-width: 900px;" src="static/images/SimFlowSR_Sim.png" alt="Self-similarity">
-        </div>
-        <div class="content has-text-justified" style="margin-top: 20px;">
-          <p>
-            <strong>Natural images exhibit geometric self-similarity</strong>—structural patterns 
-            recur under rotation, flipping, scaling. This fractal property manifests across diverse 
-            scenes (brick walls, leaves, snowflakes), enabling high-frequency recovery without heavy computation.
-          </p>
-        </div>
-        
-        <div class="has-text-centered" style="margin-top: 30px;">
-          <img style="width: 100%; max-width: 700px;" src="static/images/SimFlowSR_GAB.png" alt="GAB">
-        </div>
-        <div class="content has-text-justified" style="margin-top: 20px;">
-          <p>
-            <strong>GAB explicitly models self-similarity via parameter-free transformations.</strong> 
-            Unlike methods searching patches without geometric modeling (a), GAB applies dihedral group D₄ 
-            transformations (identity, 90°/180°/270° rotations, flips) to construct candidates (b). 
-            Initially dissimilar patches align after transformation, revealing latent patterns. 
-            Top candidates are selected (cosine similarity), inverse-aligned (T⁻¹), and aggregated 
-            (adaptive attention)—no learnable parameters required.
-          </p>
-        </div>
-      </div>
-    </div>
-    <!--/ Geometric Self-Similarity -->
+<div align="center">
+<img src="./static/images/SimFlowSR_arch.png" width="800"/>
+</div>
 
-    <!-- Architecture -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
-        <h2 class="title is-4">Network Architecture</h2>
-          <div class="has-text-centered">
-            <img style="width: 760px; height: 550px;" src="static/images/SimFlowSR_arch.png">
-          </div>
-        <div class="column content">
-          <div class="content has-text-justified">
-            <p>
-              SimFlowSR employs a modular dual-branch architecture seamlessly integrated into backbones 
-              (SwinIR, MambaIR, RWKVIR). <strong>CEB</strong> maintains consistent flow via dense-residual connections; 
-              <strong>GAB</strong> aggregates self-similar features via D₄ transformations. This plug-and-play design 
-              enhances quality across architectures while reducing complexity by up to 37%.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+SimFlowSR employs a modular dual-branch architecture:
+- **CEB (Contextual Encoding Branch)**: Maintains consistent information flow via dense-residual connections
+- **GAB (Geometric Aggregation Branch)**: Aggregates self-similar features via parameter-free D₄ transformations
 
-<section class="section">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered">
-      <div class="column">
-        <h2 class="title is-4">Analysis and Visualization</h2>
-        
-        <!-- LAM -->
-        <h3 class="title is-5">Local Attribution Maps (LAM)</h3>
-        <div class="content has-text-justified">
-          <img style="width: 100%;" src="static/images/SimFlowSR_LAM.png">
-          <p style="margin-top: 15px;">
-            <strong>LAM demonstrates superior spatial aggregation.</strong> SimFlowSR exhibits significantly 
-            higher Diffusion Index than baselines, confirming GAB expands effective receptive field and captures 
-            long-range self-similar correspondences.
-          </p>
-        </div>
-        <br />
+---
 
-        <!-- Feature Map -->
-        <h3 class="title is-5">Feature-level Sparsity</h3>
-        <div class="content has-text-justified">
-          <img style="width: 100%;" src="static/images/SimFlowSR_featuremap.png">
-          <p style="margin-top: 15px;">
-            <strong>Sparse activation patterns reveal channel specialization.</strong> Each channel targets 
-            distinct geometric primitives (diagonals, facades), demonstrating GAB aggregates self-similar 
-            structures while maintaining efficiency through reduced redundancy.
-          </p>
-        </div>
-        <br />
+## 📦 Installation
+```bash
+git clone https://github.com/ming053l/SimFlowSR.git
+cd SimFlowSR
 
-        <!-- ERF -->
-        <h3 class="title is-5">Effective Receptive Field (ERF)</h3>
-        <div class="content has-text-justified">
-          <img style="width: 100%;" src="static/images/SimFlowSR_ERF.png">
-          <p style="margin-top: 15px;">
-            <strong>ERF shows substantially broader spatial coverage.</strong> All baselines exhibit significantly 
-            expanded ERF when integrated with SimFlowSR, demonstrating GAB's multi-scale D₄ transformations 
-            consistently enhance spatial modeling across diverse architectures.
-          </p>
-        </div>
-        <br />
+# Create conda environment
+conda create -n simflowsr python=3.8 -y
+conda activate simflowsr
 
-      </div>
-    </div>
-  </div>
-</section>
-  
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">BibTeX</h2>
-    <pre><code>@article{lee2024simflowsr,
+# Install PyTorch (adjust CUDA version as needed)
+conda install pytorch==1.12.1 torchvision==0.13.1 cudatoolkit=11.6 -c pytorch -c conda-forge
+
+# Install dependencies
+pip install -r requirements.txt
+python setup.py develop
+```
+
+---
+
+## 🔧 Usage
+
+### Testing
+```bash
+# Test SimFlowSR-SwinIR
+python simflowsr/test.py -opt options/test/SimFlowSR_SwinIR_test.yml
+
+# Test SimFlowSR-MambaIR
+python simflowsr/test.py -opt options/test/SimFlowSR_MambaIR_test.yml
+```
+
+### Training
+```bash
+# Train SimFlowSR-SwinIR (multi-GPU)
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+python -m torch.distributed.launch \
+    --nproc_per_node=4 --master_port=4321 \
+    simflowsr/train.py \
+    -opt options/train/train_SimFlowSR_SwinIR.yml \
+    --launcher pytorch
+
+# Train SimFlowSR-MambaIR (multi-GPU)
+CUDA_VISIBLE_DEVICES=0,1,2,3 \
+python -m torch.distributed.launch \
+    --nproc_per_node=4 --master_port=4321 \
+    simflowsr/train.py \
+    -opt options/train/train_SimFlowSR_MambaIR.yml \
+    --launcher pytorch
+```
+
+---
+
+## 📊 Datasets
+
+- **Training**: DF2K (DIV2K + Flickr2K)
+- **Testing**: Set5, Set14, BSD100, Urban100, Manga109
+
+Download links and preprocessing scripts are provided in `datasets/README.md`.
+
+---
+
+## 🎨 Visualization
+
+<div align="center">
+<img src="./static/images/SimFlowSR_LAM.png" width="800"/>
+<p><i>Local Attribution Maps showing superior spatial aggregation capability</i></p>
+</div>
+
+<div align="center">
+<img src="./static/images/SimFlowSR_ERF.png" width="800"/>
+<p><i>Effective Receptive Field demonstrating broader spatial coverage</i></p>
+</div>
+
+---
+
+## 📝 Citation
+
+If you find our work helpful, please consider citing:
+```bibtex
+@article{lee2025simflowsr,
   title={SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution},
   author={Lee, Chia-Ming and Hsu, Chih-Chung},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2024}
-}</code></pre>
-  </div>
-</section>
+  year={2025}
+}
+```
 
-  
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="content has-text-centered">
-        <p>
-          This page is modified from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> template.
-        </p>
-        <p>
-          Our work builds upon <a href="https://github.com/JingyunLiang/SwinIR">SwinIR</a>, 
-          <a href="https://github.com/csguoh/MambaIR">MambaIR</a>, 
-          <a href="https://github.com/ming053l/DRCT">DRCT</a>, and 
-          <a href="https://github.com/XPixelGroup/BasicSR">BasicSR</a>. 
-          We are grateful for their outstanding contributions.
-        </p>
-      </div>
-    </div>
-  </div>
-</footer>
+---
 
-<script>
-  document.addEventListener('DOMContentLoaded', function() {
-    console.log('DOM loaded, initializing sliders...');
-    
-    for (let i = 1; i <= 16; i++) {
-      new BeforeAfter({ id: '#compare' + i });
-    }
-  });
-</script>
-  
-</body>
-</html>
+## 🙏 Acknowledgments
+
+Our work builds upon excellent open-source projects:
+- [SwinIR](https://github.com/JingyunLiang/SwinIR)
+- [MambaIR](https://github.com/csguoh/MambaIR)
+- [DRCT](https://github.com/ming053l/DRCT)
+- [BasicSR](https://github.com/XPixelGroup/BasicSR)
+
+We are grateful for their outstanding contributions to the community.
+
+---
+
+## 📧 Contact
+
+For questions or discussions, please:
+- Open an issue on [GitHub](https://github.com/ming053l/SimFlowSR/issues)
+- Email: [ming053l@gmail.com](mailto:ming053l@gmail.com)
+
+---
+
+## 📄 License
+
+This project is released under the MIT License. See [LICENSE](LICENSE) for details.
+
+</div>
