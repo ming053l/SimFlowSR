@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="PhaSR combines parameter-free Retinex normalization with geometric-semantic cross-modal attention for state-of-the-art shadow removal and ambient lighting normalization with highest efficiency.">
-  <meta name="keywords" content="PhaSR, Shadow Removal">
+        content="SimFlowSR combines consistent information flow with parameter-free self-similarity aggregation for state-of-the-art super-resolution with highest efficiency.">
+  <meta name="keywords" content="SimFlowSR, Super-Resolution, Image Restoration">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors</title>
+  <title>SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution</title>
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
@@ -32,7 +32,7 @@
   <link rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="./static/css/index.css">
-  <link rel="icon" href="./static/images/icon.png">
+  <link rel="icon" href="./static/images/SimFlowSR_icon.png">
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script defer src="./static/js/fontawesome.all.min.js"></script>
@@ -53,7 +53,7 @@
   </div>
   <div class="navbar-menu">
     <div class="navbar-start" style="flex-grow: 1; justify-content: center;">
-      <a class="navbar-item" href="https://keunhong.com">
+      <a class="navbar-item" href="https://ming053l.github.io/">
       <span class="icon">
           <i class="fas fa-home"></i>
       </span>
@@ -64,17 +64,11 @@
           More Research
         </a>
         <div class="navbar-dropdown">
-          <a class="navbar-item" href="https://hypernerf.github.io">
-            HyperNeRF
+          <a class="navbar-item" href="https://ming053l.github.io/PhaSR/">
+            PhaSR
           </a>
-          <a class="navbar-item" href="https://nerfies.github.io">
-            Nerfies
-          </a>
-          <a class="navbar-item" href="https://latentfusion.github.io">
-            LatentFusion
-          </a>
-          <a class="navbar-item" href="https://photoshape.github.io">
-            PhotoShape
+          <a class="navbar-item" href="https://ming053l.github.io/DRCT/">
+            DRCT
           </a>
         </div>
       </div>
@@ -90,21 +84,11 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">
-            <img src="./static/images/icon_white.png" alt="PhaSR Icon" class="title-icon">PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors
+            <img src="./static/images/SimFlowSR_icon.png" alt="SimFlowSR Icon" class="title-icon">SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution
           </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://ming053l.github.io/">Chia-Ming Lee</a><sup>1,2</sup>,</span>
-            <span class="author-block">
-              <a href="https://vanlinlin.github.io/">Yu-Fan Lin</a><sup>2</sup>,</span>
-            <span class="author-block">
-              <a href="https://jonbarron.info">Yu-Jou Hsiao</a><sup>1</sup>,
-            </span>
-            <span class="author-block">
-              <a href="http://sofienbouaziz.com">Jing-Hui Jung</a><sup>2</sup>,
-            <span class="author-block">
-              <a href="https://yulunalexliu.github.io/">Yu-Lun Liu</a><sup>1</sup>,
-            </span>
             <span class="author-block">
               <a href="https://cchsu.info/">Chih-Chung Hsu</a><sup>1,2</sup>
             </span>
@@ -119,7 +103,7 @@
             <div class="publication-links">
               <!-- PDF Link. -->
               <span class="link-block">
-                <a href="https://arxiv.org/pdf/2011.12948"
+                <a href="https://arxiv.org/pdf/XXXX.XXXXX"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -128,7 +112,7 @@
                 </a>
               </span>
               <span class="link-block">
-                <a href="https://arxiv.org/abs/2011.12948"
+                <a href="https://arxiv.org/abs/XXXX.XXXXX"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="ai ai-arxiv"></i>
@@ -138,7 +122,7 @@
               </span>
               <!-- Code Link. -->
               <span class="link-block">
-                <a href="https://github.com/ming053l/PhaSR"
+                <a href="https://github.com/ming053l/SimFlowSR"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="fab fa-github"></i>
@@ -148,12 +132,12 @@
               </span>
               <!-- Dataset Link. -->
               <span class="link-block">
-                <a href="https://github.com/google/nerfies/releases/tag/0.1"
+                <a href="https://drive.google.com/drive/folders/XXXXX"
                    class="external-link button is-normal is-rounded is-dark">
                   <span class="icon">
                       <i class="far fa-images"></i>
                   </span>
-                  <span>Data</span>
+                  <span>Results</span>
                   </a>
             </div>
 
@@ -167,12 +151,11 @@
 <section class="hero teaser">
   <div class="container is-max-desktop">
     <div class="hero-body">
-      <img src="./static/images/PhaSR-motivation.png" alt="PhaSR Motivation" style="width: 100%;">
+      <img src="./static/images/SimFlowSR-motivation.png" alt="SimFlowSR Motivation" style="width: 100%;">
       <h2 class="subtitle has-text-centered" style="margin-top: 20px;">
-        <strong>Motivation:</strong> Existing methods lose physical priors through encoder-decoder bottlenecks, 
-        failing to localize shadows accurately (see feature visualizations above). 
-        <span class="dnerf">PhaSR</span> addresses this via <strong>dual-level physically aligned priors</strong>, 
-        generalizing from single-light to multi-source ambient lighting scenarios.
+        <strong>Motivation:</strong> Existing methods suffer from unstable activation dynamics and limited high-frequency detail recovery. 
+        <span class="dnerf">SimFlowSR</span> addresses this via <strong>dual-branch cooperative architecture</strong>, 
+        combining consistent information flow (CEB) with parameter-free self-similarity aggregation (GAB) for globally stable yet detail-rich reconstruction.
       </h2>
     </div>
   </div>
@@ -186,19 +169,21 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Shadow removal under diverse lighting requires disentangling illumination from intrinsic reflectance—
-            a challenge when physical priors are misaligned.
+            Recent single image super-resolution (SISR) methods suffer from unstable feature propagation and large model sizes. 
+            While consistent information flow stabilizes activation dynamics, current approaches still struggle to recover 
+            high-frequency details crucial for perceptual quality.
           </p>
           <p>
-            We propose <strong>PhaSR</strong> with dual-level prior alignment: 
-            <strong>(1) PAN</strong> performs parameter-free illumination correction via Gray-world normalization 
-            and log-domain Retinex decomposition, suppressing chromatic bias. 
-            <strong>(2) GSRA</strong> extends differential attention to harmonize depth-derived geometry 
-            with DINO-v2 semantics, resolving modal conflicts across illumination conditions.
+            We propose <strong>SimFlowSR</strong>, a lightweight framework comprising two complementary branches: 
+            <strong>(1) CEB (Contextual Encoding Branch)</strong> stabilizes activation dynamics through dense-residual connections, 
+            while <strong>(2) GAB (Geometric Aggregation Branch)</strong> recovers fine structures via parameter-free geometric 
+            transformations using the dihedral group D₄. This cooperative design achieves globally consistent yet detail-rich 
+            reconstruction with minimal overhead.
           </p>
           <p>
-            Experiments demonstrate competitive performance with lower complexity, 
-            generalizing to ambient lighting where traditional methods fail.
+            When integrated into SwinIR and MambaIR, SimFlowSR improves reconstruction quality with up to 37% fewer parameters, 
+            demonstrating superior performance across standard benchmarks. Our principled integration of consistent information 
+            flow with self-similarity aggregation provides a new pathway toward high-fidelity super-resolution.
           </p>
         </div>
       </div>
@@ -209,19 +194,19 @@
       <div class="column is-full-width">
         <h2 class="title is-4">Network Architecture</h2>
         <div class="column content">
-          <img style="margin-top: -10px;" src="static/images/PhaSR_main.png">
+          <img style="margin-top: -10px;" src="static/images/SimFlowSR_main.png">
           <div class="content has-text-justified">
             <p>
-              A multi-scale Transformer encoder-decoder integrates frozen DINO-v2 semantic features 
-              and DepthAnything-v2 geometric priors via GSRA's cross-modal differential attention 
-              (A<sub>rect</sub> = A<sub>sem</sub> - λ·A<sub>geo</sub>).
+              SimFlowSR employs a dual-branch architecture where CEB maintains consistent information flow through 
+              dense-residual connections, while GAB aggregates self-similar features via parameter-free geometric 
+              transformations (rotation, flipping) from the dihedral group D₄.
             </p>
           </div>
         </div>
 
         <h2 class="title is-4">Qualitative Results</h2>
         <div class="content has-text-justified">
-          <img style="width: 960px; height: 300px;" src="static/images/PhaSR_results.png">
+          <img style="width: 960px; height: 300px;" src="static/images/SimFlowSR_results.png">
         </div>
       </div>
     </div>
@@ -234,22 +219,22 @@
       <!-- Comparison -->
       <div class="column">
         <br/>
-        <h2 class="title is-4">Comparison Results on WSRD+ (Realworld-Indoor)</h2>
+        <h2 class="title is-4">Comparison Results on Urban100 (×4 Super-Resolution)</h2>
 
         <!-- Sample 1 -->
-        <h3 class="title is-5">Sample 1</h3>
+        <h3 class="title is-5">Sample 1 - img_012</h3>
         
         <div class="image-columns">
           <div class="image-column">
             <div id="compare1" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample1/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample1/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample1/PhaSR.png">
-                  <div class="bal-beforePosition beforeLabel">PhaSR (Ours)</div>
+                  <img src="./static/images/Sample1/SimFlowSR.png">
+                  <div class="bal-beforePosition beforeLabel">SimFlowSR (Ours)</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -262,13 +247,13 @@
           <div class="image-column">
             <div id="compare2" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample1/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample1/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample1/DenseSR.png">
-                  <div class="bal-beforePosition beforeLabel">DenseSR</div>
+                  <img src="./static/images/Sample1/SwinIR.png">
+                  <div class="bal-beforePosition beforeLabel">SwinIR</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -281,13 +266,13 @@
           <div class="image-column">
             <div id="compare3" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample1/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample1/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample1/ShadowRefiner.png">
-                  <div class="bal-beforePosition beforeLabel">ShadowRefiner</div>
+                  <img src="./static/images/Sample1/HAT.png">
+                  <div class="bal-beforePosition beforeLabel">HAT</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -300,13 +285,13 @@
           <div class="image-column">
             <div id="compare4" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample1/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample1/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample1/StableShadowDiffusion.png">
-                  <div class="bal-beforePosition beforeLabel">StableShadowDiffusion</div>
+                  <img src="./static/images/Sample1/DRCT.png">
+                  <div class="bal-beforePosition beforeLabel">DRCT</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -319,19 +304,19 @@
         <br /><br />
 
         <!-- Sample 2 -->
-        <h3 class="title is-5">Sample 2</h3>
+        <h3 class="title is-5">Sample 2 - img_061</h3>
         
         <div class="image-columns">
           <div class="image-column">
             <div id="compare5" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample2/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample2/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample2/PhaSR.png">
-                  <div class="bal-beforePosition beforeLabel">PhaSR (Ours)</div>
+                  <img src="./static/images/Sample2/SimFlowSR.png">
+                  <div class="bal-beforePosition beforeLabel">SimFlowSR (Ours)</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -344,13 +329,13 @@
           <div class="image-column">
             <div id="compare6" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample2/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample2/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample2/DenseSR.png">
-                  <div class="bal-beforePosition beforeLabel">DenseSR</div>
+                  <img src="./static/images/Sample2/SwinIR.png">
+                  <div class="bal-beforePosition beforeLabel">SwinIR</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -363,13 +348,13 @@
           <div class="image-column">
             <div id="compare7" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample2/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample2/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample2/ShadowRefiner.png">
-                  <div class="bal-beforePosition beforeLabel">ShadowRefiner</div>
+                  <img src="./static/images/Sample2/HAT.png">
+                  <div class="bal-beforePosition beforeLabel">HAT</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -382,13 +367,13 @@
           <div class="image-column">
             <div id="compare8" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample2/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample2/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample2/StableShadowDiffusion.png">
-                  <div class="bal-beforePosition beforeLabel">StableShadowDiffusion</div>
+                  <img src="./static/images/Sample2/DRCT.png">
+                  <div class="bal-beforePosition beforeLabel">DRCT</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -401,21 +386,21 @@
         <br /><br />
 
         
-        <h2 class="title is-4">Comparison Results on INS Dataset (Synthesized-Indoor)</h2>
+        <h2 class="title is-4">Comparison Results on Set14 (×4 Super-Resolution)</h2>
         <!-- Sample 3 Full -->
-        <h3 class="title is-5">Sample 3 - Full Image</h3>
+        <h3 class="title is-5">Sample 3 - baboon</h3>
         
         <div class="image-columns">
           <div class="image-column">
             <div id="compare9" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample3_full/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample3/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample3_full/PhaSR.png">
-                  <div class="bal-beforePosition beforeLabel">PhaSR (Ours)</div>
+                  <img src="./static/images/Sample3/SimFlowSR.png">
+                  <div class="bal-beforePosition beforeLabel">SimFlowSR (Ours)</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -428,13 +413,13 @@
           <div class="image-column">
             <div id="compare10" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample3_full/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample3/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample3_full/DenseSR.png">
-                  <div class="bal-beforePosition beforeLabel">DenseSR</div>
+                  <img src="./static/images/Sample3/SwinIR.png">
+                  <div class="bal-beforePosition beforeLabel">SwinIR</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -447,13 +432,13 @@
           <div class="image-column">
             <div id="compare11" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample3_full/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample3/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample3_full/OmniSR.png">
-                  <div class="bal-beforePosition beforeLabel">OmniSR</div>
+                  <img src="./static/images/Sample3/MambaIR.png">
+                  <div class="bal-beforePosition beforeLabel">MambaIR</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -466,13 +451,13 @@
           <div class="image-column">
             <div id="compare12" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample3_full/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample3/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample3_full/StableShadowDiffusion.png">
-                  <div class="bal-beforePosition beforeLabel">StableShadowDiffusion</div>
+                  <img src="./static/images/Sample3/DRCT.png">
+                  <div class="bal-beforePosition beforeLabel">DRCT</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -484,20 +469,20 @@
         </div>
         <br /><br />
 
-        <!-- Sample 3 Cropped -->
-        <h3 class="title is-5">Sample 3 - Cropped Region</h3>
+        <!-- Sample 4 -->
+        <h3 class="title is-5">Sample 4 - comic</h3>
         
         <div class="image-columns">
           <div class="image-column">
             <div id="compare13" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample3_cropped/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample4/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample3_cropped/PhaSR.png">
-                  <div class="bal-beforePosition beforeLabel">PhaSR (Ours)</div>
+                  <img src="./static/images/Sample4/SimFlowSR.png">
+                  <div class="bal-beforePosition beforeLabel">SimFlowSR (Ours)</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -510,13 +495,13 @@
           <div class="image-column">
             <div id="compare14" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample3_cropped/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample4/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample3_cropped/DenseSR.png">
-                  <div class="bal-beforePosition beforeLabel">DenseSR</div>
+                  <img src="./static/images/Sample4/SwinIR.png">
+                  <div class="bal-beforePosition beforeLabel">SwinIR</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -529,13 +514,13 @@
           <div class="image-column">
             <div id="compare15" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample3_cropped/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample4/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample3_cropped/OmniSR.png">
-                  <div class="bal-beforePosition beforeLabel">OmniSR</div>
+                  <img src="./static/images/Sample4/MambaIR.png">
+                  <div class="bal-beforePosition beforeLabel">MambaIR</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -548,177 +533,13 @@
           <div class="image-column">
             <div id="compare16" class="bal-container-origin">
               <div class="bal-after">
-                <img src="./static/images/Sample3_cropped/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
+                <img src="./static/images/Sample4/bicubic.png">
+                <div class="bal-afterPosition afterLabel">Bicubic</div>
               </div>
               <div class="bal-before">
                 <div class="bal-before-inset">
-                  <img src="./static/images/Sample3_cropped/StableShadowDiffusion.png">
-                  <div class="bal-beforePosition beforeLabel">StableShadowDiffusion</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br /><br />
-
-        <!-- Sample 4 Full -->
-        <h3 class="title is-5">Sample 4 - Full Image</h3>
-        
-        <div class="image-columns">
-          <div class="image-column">
-            <div id="compare17" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4_full/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4_full/PhaSR.png">
-                  <div class="bal-beforePosition beforeLabel">PhaSR (Ours)</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare18" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4_full/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4_full/DenseSR.png">
-                  <div class="bal-beforePosition beforeLabel">DenseSR</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare19" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4_full/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4_full/OmniSR.png">
-                  <div class="bal-beforePosition beforeLabel">OmniSR</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare20" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4_full/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4_full/StableShadowDiffusion.png">
-                  <div class="bal-beforePosition beforeLabel">StableShadowDiffusion</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-        </div>
-        <br /><br />
-
-        <!-- Sample 4 Cropped -->
-        <h3 class="title is-5">Sample 4 - Cropped Region</h3>
-        
-        <div class="image-columns">
-          <div class="image-column">
-            <div id="compare21" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4_cropped/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4_cropped/PhaSR.png">
-                  <div class="bal-beforePosition beforeLabel">PhaSR (Ours)</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare22" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4_cropped/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4_cropped/DenseSR.png">
-                  <div class="bal-beforePosition beforeLabel">DenseSR</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare23" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4_cropped/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4_cropped/OmniSR.png">
-                  <div class="bal-beforePosition beforeLabel">OmniSR</div>
-                </div>
-              </div>
-              <div class="bal-handle">
-                <span class="handle-left-arrow"></span>
-                <span class="handle-right-arrow"></span>
-              </div>
-            </div>
-          </div>
-
-          <div class="image-column">
-            <div id="compare24" class="bal-container-origin">
-              <div class="bal-after">
-                <img src="./static/images/Sample4_cropped/input.png">
-                <div class="bal-afterPosition afterLabel">Input</div>
-              </div>
-              <div class="bal-before">
-                <div class="bal-before-inset">
-                  <img src="./static/images/Sample4_cropped/StableShadowDiffusion.png">
-                  <div class="bal-beforePosition beforeLabel">StableShadowDiffusion</div>
+                  <img src="./static/images/Sample4/DRCT.png">
+                  <div class="bal-beforePosition beforeLabel">DRCT</div>
                 </div>
               </div>
               <div class="bal-handle">
@@ -740,11 +561,11 @@
 <section class="section" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">BibTeX</h2>
-    <pre><code>@article{lee2025phasr,
-  title={PhaSR: Generalized Image Shadow Removal with Physically Aligned Priors},
-  author={Lee, Chia-Ming and Lin, Yu-Fan and Hsiao, Yu-Jou and Jung, Jing-Hui and Liu, Yu-Lun and Hsu, Chih-Chung},
+    <pre><code>@article{lee2024simflowsr,
+  title={SimFlowSR: Self-similarity Aggregation over Consistent Information Flow for Single Image Super-Resolution},
+  author={Lee, Chia-Ming and Hsu, Chih-Chung},
   journal={arXiv preprint arXiv:XXXX.XXXXX},
-  year={2025}
+  year={2024}
 }</code></pre>
   </div>
 </section>
@@ -758,9 +579,10 @@
           This page is modified from the <a href="https://github.com/nerfies/nerfies.github.io">Nerfies</a> template.
         </p>
         <p>
-          Our work builds upon <a href="https://blackjoke76.github.io/Projects/OmniSR/">OmniSR</a>, 
-          <a href="https://github.com/VanLinLin/DenseSR">DenseSR</a>, and 
-          <a href="https://arxiv.org/abs/2410.05258">Differential Transformer</a>. 
+          Our work builds upon <a href="https://github.com/JingyunLiang/SwinIR">SwinIR</a>, 
+          <a href="https://github.com/csguoh/MambaIR">MambaIR</a>, 
+          <a href="https://github.com/ming053l/DRCT">DRCT</a>, and 
+          <a href="https://github.com/XPixelGroup/BasicSR">BasicSR</a>. 
           We are grateful for their outstanding contributions.
         </p>
       </div>
@@ -774,7 +596,7 @@
     console.log('DOM loaded, initializing sliders...');
     
     // Initialize all comparison sliders
-    for (let i = 1; i <= 24; i++) {
+    for (let i = 1; i <= 16; i++) {
       new BeforeAfter({ id: '#compare' + i });
     }
   });
