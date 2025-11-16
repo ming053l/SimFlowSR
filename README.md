@@ -14,6 +14,9 @@ National Yang Ming Chiao Tung University, National Cheng Kung University
 
 ## Overview
 
+<img src="./static/teaser_image7" width="600"/>
+<img src="./static/teaser_image8" width="600"/>
+
 **TL;DR:** SimFlowSR combines consistent information flow with parameter-free self-similarity aggregation for state-of-the-art super-resolution with highest efficiency.
 
 - **Background and Motivation**
@@ -27,8 +30,6 @@ SimFlowSR addresses these challenges through **dual-branch cooperative architect
 1. **CEB (Contextual Encoding Branch)** - Dense-residual connections for consistent information flow, stabilizing inter-layer activation dynamics and maintaining smooth spatial information transmission.
 
 2. **GAB (Geometric Aggregation Branch)** - Parameter-free geometric transformations via dihedral group D₄ (rotation, flipping) for self-similarity aggregation, enhancing high-frequency detail recovery without additional learnable parameters.
-
-<img src="./static/images/SimFlowSR_arch.png" width="600"/>
 
 **Benchmark results on image super-resolution (×4).**
 
